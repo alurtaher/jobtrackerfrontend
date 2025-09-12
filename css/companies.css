@@ -1,0 +1,342 @@
+/* Navbar styles */
+:root {
+  --primary-color: #1abc9c;
+  --secondary-color: #2c3e50;
+  --text-primary: #2c3e50;
+  --text-secondary: #7f8c8d;
+  --bg-primary: #ecf1f5;
+  --bg-secondary: #ffffff;
+  --border-color: #bdc3c7;
+  --danger-color: #e74c3c;
+  --success-color: #27ae60;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-primary);
+  margin: 0;
+  padding: 0;
+  color: var(--text-primary);
+}
+
+.navbar {
+  background: var(--secondary-color);
+  padding: 12px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow);
+}
+
+.logo {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #ecf1f5;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a,
+.nav-links li button {
+  color: #ecf1f5;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus,
+.nav-links li a.active {
+  background-color: #34495e;
+  color: var(--primary-color);
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.nav-links li button {
+  background-color: var(--danger-color);
+}
+
+.nav-links li button:hover,
+.nav-links li button:focus {
+  background-color: #c0392b;
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 40px auto 80px;
+  padding: 0 20px;
+}
+
+h1 {
+  margin-bottom: 24px;
+}
+
+#addCompanyBtn {
+  background-color: var(--primary-color);
+  border: none;
+  color: white;
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  user-select: none;
+  transition: background-color 0.3s;
+}
+
+#addCompanyBtn:hover {
+  background-color: #16a085;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--bg-secondary);
+  box-shadow: var(--shadow);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+thead {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 700;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+  font-size: 0.95rem;
+}
+
+tbody tr:hover {
+  background-color: #eaf6f4;
+}
+
+td.actions {
+  min-width: 120px;
+  text-align: center;
+}
+
+button.edit-btn,
+button.delete-btn {
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  margin: 0 4px;
+  font-size: 0.875rem;
+  transition: background-color 0.3s;
+}
+
+button.edit-btn {
+  background-color: var(--primary-color);
+}
+
+button.edit-btn:hover {
+  background-color: #16a085;
+}
+
+button.delete-btn {
+  background-color: var(--danger-color);
+}
+
+button.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  overflow: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  background-color: var(--bg-secondary);
+  margin: 20px;
+  padding: 24px 30px 30px 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.modal-header {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-size: 1.6rem;
+  border: none;
+  background: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: var(--primary-color);
+  outline: none;
+}
+
+form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 12px;
+}
+
+form input[type="text"],
+form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1.5px solid var(--border-color);
+  font-family: inherit;
+  resize: vertical;
+}
+
+textarea {
+  min-height: 80px;
+}
+
+form button[type="submit"] {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button[type="submit"]:hover {
+  background-color: #16a085;
+}
+
+.message {
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  display: none;
+}
+
+.message.error {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.message.success {
+  background-color: var(--success-color);
+  color: white;
+}
+
+/* Actions cell alignment */
+td.actions {
+  text-align: right;
+  white-space: nowrap;
+  padding-right: 20px;
+}
+
+/* Buttons group: keep buttons close and aligned */
+.btn-group {
+  display: inline-flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+/* Button styles with uniform size */
+button.edit-btn,
+button.delete-btn {
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  font-size: 0.875rem;
+  min-width: 70px;
+  /* Uniform width */
+  transition: background-color 0.3s;
+}
+
+/* Different background colors */
+button.edit-btn {
+  background-color: var(--primary-color);
+}
+
+button.edit-btn:hover,
+button.edit-btn:focus {
+  background-color: #16a085;
+  outline: none;
+}
+
+button.delete-btn {
+  background-color: var(--danger-color);
+}
+
+button.delete-btn:hover,
+button.delete-btn:focus {
+  background-color: #c0392b;
+  outline: none;
+}
