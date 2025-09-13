@@ -5,7 +5,7 @@ let editingApplicationId = null;
 document.addEventListener("DOMContentLoaded", () => {
   authToken = localStorage.getItem("authToken");
   if (!authToken) {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
     return;
   }
   loadApplications();
@@ -22,7 +22,7 @@ document.getElementById("logoutBtn").addEventListener("click", () => {
   if (confirm("Are you sure you want to logout?")) {
     localStorage.removeItem("authToken");
     localStorage.removeItem("user");
-    window.location.href = "login.html";
+    window.location.href = "index.html";
   }
 });
 

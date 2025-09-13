@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Check authentication and initialize
 async function initializeDashboard() {
-  if (window.location.pathname.endsWith("login.html")) {
+  if (window.location.pathname.endsWith("index.html")) {
     return; // Prevent redirect loop if already on index.html
   }
 
@@ -20,7 +20,7 @@ async function initializeDashboard() {
   const userData = localStorage.getItem("user");
 
   if (!authToken || !userData) {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
     return;
   }
 
@@ -78,7 +78,7 @@ async function loadJobApplications() {
       setTimeout(() => {
         localStorage.removeItem("authToken");
         localStorage.removeItem("user");
-        window.location.href = "login.html";
+        window.location.href = "index.html";
       }, 2000);
     } else {
       showErrorMessage(
@@ -249,7 +249,7 @@ async function submitNewCompany() {
       setTimeout(() => {
         localStorage.removeItem("authToken");
         localStorage.removeItem("user");
-        window.location.href = "login.html";
+        window.location.href = "index.html";
       }, 2000);
     } else {
       showErrorMessage("Failed to add company. Please try again.");
@@ -428,7 +428,7 @@ document.getElementById("logoutBtn").addEventListener("click", function () {
   if (confirm("Are you sure you want to logout?")) {
     localStorage.removeItem("authToken");
     localStorage.removeItem("user");
-    window.location.href = "login.html";
+    window.location.href = "index.html";
   }
 });
 

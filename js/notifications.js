@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const authToken = localStorage.getItem("authToken");
   if (!authToken) {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
     return;
   }
   ensureAuth();
@@ -26,7 +26,7 @@ document.getElementById("logoutBtn").addEventListener("click", function () {
   if (confirm("Are you sure you want to logout?")) {
     localStorage.removeItem("authToken");
     localStorage.removeItem("user");
-    window.location.href = "login.html";
+    window.location.href = "index.html";
   }
 });
 

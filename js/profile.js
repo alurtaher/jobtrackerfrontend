@@ -11,7 +11,7 @@ document.getElementById("logoutBtn").addEventListener("click", () => {
   if (confirm("Are you sure you want to logout?")) {
     localStorage.removeItem("authToken");
     localStorage.removeItem("user");
-    window.location.href = "login.html";
+    window.location.href = "index.html";
   }
 });
 
@@ -68,7 +68,7 @@ async function loadProfile() {
 
   const token = localStorage.getItem("authToken");
   if (!token) {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
     return;
   }
 
@@ -96,7 +96,7 @@ async function loadProfile() {
       setTimeout(() => {
         localStorage.removeItem("authToken");
         localStorage.removeItem("user");
-        window.location.href = "login.html";
+        window.location.href = "index.html";
       }, 2000);
     }
   }
@@ -116,7 +116,7 @@ async function saveProfile(e) {
 
   const token = localStorage.getItem("authToken");
   if (!token) {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
     return;
   }
 

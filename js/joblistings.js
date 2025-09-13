@@ -10,7 +10,7 @@ document.getElementById("logoutBtn").addEventListener("click", () => {
   if (confirm("Are you sure you want to logout?")) {
     localStorage.removeItem("authToken");
     localStorage.removeItem("user");
-    window.location.href = "login.html";
+    window.location.href = "index.html";
   }
 });
 
@@ -269,7 +269,7 @@ function closeModal() {
 async function init() {
   const token = localStorage.getItem("authToken");
   if (!token) {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
     return;
   }
   await loadCompanies();
@@ -280,7 +280,7 @@ async function init() {
 document.addEventListener("DOMContentLoaded", () => {
   authToken = localStorage.getItem("authToken");
   if (!authToken) {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
     return;
   }
   init();
